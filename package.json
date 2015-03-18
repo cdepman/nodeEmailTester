@@ -1,0 +1,17 @@
+{
+  "name": "emailTester",
+  "version": "1.0.0",
+  "description": "testing emailing functionality",
+  "main": "mailer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Charlie Depman <cdepman@gmail.com> (http://cdepman.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^2.9.14",
+    "firebase": "^2.2.2",
+    "nodemailer": "^1.3.2",
+    "socket.io": "^1.3.5"
+  }
+}
