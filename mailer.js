@@ -21,7 +21,7 @@ var sendEmail = function(emailText) {
     return;
   }
   var options = {
-    from: 'Admissions <' + config.email + '>',
+    from: 'cdepman@gmail.com',
     subject: 'TEST EMAIL FOR FORMATTING',
     text: util.format(emailText.text, 'Charlie'),
     html: util.format(emailText.html, 'Charlie'),
