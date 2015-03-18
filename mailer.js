@@ -23,8 +23,8 @@ var sendEmail = function(emailText) {
   var options = {
     from: 'Admissions <' + config.email + '>',
     subject: 'TEST EMAIL FOR FORMATTING',
-    text: emailText.text,
-    html: emailText.html,
+    text: util.format(emailText.text, 'Charlie'),
+    html: util.format(emailText.html, 'Charlie'),
     to: 'cdepman@gmail.com'
   };
   return new Promise(function(resolve, reject) {
@@ -40,7 +40,7 @@ var sendEmail = function(emailText) {
 };
 
 
-var fetchEmailText = function(){
+var fetchEmailTextAndSend = function(){
   var emailTextDB = new Firebase(fireBaseConfig.dbAddress);
   emailTextDB.authWithCustomToken(fireBaseConfig.AUTH_TOKEN, function(error, result) {
     if (error) {
@@ -58,10 +58,10 @@ var fetchEmailText = function(){
     }
   };
 
-  emailTextDB.child('/fullTime/emailA').once('value', function(data){
+  emailTextDB.child('/fullTime/emailB').once('value', function(data){
     console.log('Retrieved Data:', data.val());
     sendEmail(data.val());
   });
 }
 
-fetchEmailText();
+fetchEmailTextAndSend();
